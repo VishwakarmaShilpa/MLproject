@@ -1,4 +1,0 @@
-[ 2026-10-06 12:39:02,204] 23 root - INFO - Entered the data ingestion method or component
-[ 2026-10-06 12:39:02,217] 26 root - INFO - Read the dataset as dataframe
-[ 2026-10-06 12:39:02,224] 30 root - INFO - Raw data is saved
-[ 2026-10-06 12:39:02,234] 35 root - INFO - Ingestion of the data is completed
