@@ -48,8 +48,46 @@ class ModelTrainer:
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
 
+            parameters = {
+                "Decision Tree": {
+                    "max_depth": [3, 5, 7, 10],
+                    "min_samples_split": [2, 5, 10],
+                    "min_samples_leaf": [1, 2, 4]
+                },
+                "Random Forest": {
+                    "n_estimators": [100, 200, 300],
+                    "max_depth": [3, 5, 7, 10],
+                    "min_samples_split": [2, 5, 10]
+                }, 
+                "Gradient Boosting": {
+                    "n_estimators": [100, 200, 300],
+                    "learning_rate": [0.01, 0.1, 0.2],
+                    "max_depth": [3, 5, 7]
+                },
+                "Linear Regression": {},
+                "K-Neighbors Regressor": {
+                    "n_neighbors": [3, 5, 7, 10],
+                    "weights": ["uniform", "distance"],
+                    "algorithm": ["auto", "ball_tree", "kd_tree", "brute"]
+                },
+                "XGBRegressor": {
+                    "n_estimators": [100, 200, 300],
+                    "learning_rate": [0.01, 0.1, 0.2],
+                    "max_depth": [3, 5, 7]
+                },
+                "CatBoosting Regressor": {
+                    "iterations": [100, 200, 300],
+                    "learning_rate": [0.01, 0.1, 0.2],
+                    "depth": [3, 5, 7]
+                },
+                "AdaBoost Regressor": {
+                    "n_estimators": [50, 100, 200],
+                    "learning_rate": [0.01, 0.1, 0.2]
+                }
+            }
+
             model_report: dict = evaluate_models(
-                X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models
+                X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models, parameters=parameters
             )
 
             # To get the best model score from the dictionary
